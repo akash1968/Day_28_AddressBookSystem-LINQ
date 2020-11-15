@@ -22,6 +22,8 @@ namespace AddressBookSystem_LINQ
             // UC_5
             AddressBookDataTable.DeleteContact("Lebron", "James");
             AddressBookDataTable.DisplayTableContents();
+            //UC 6
+            AddressBookDataTable.RetrievePersonFromACityOrState("Lakers", "Boston");
         }
     }
 }
