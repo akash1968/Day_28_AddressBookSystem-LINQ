@@ -1,19 +1,21 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Program.cs" company="Bridgelabz">
+// <copyright file="AddressBookDataTable.cs" company="Bridgelabz">
 //   Copyright © 2018 Company
 // </copyright>
 // <creator Name="Akash Kumar Singh"/>
 // --------------------------------------------------------------------------------------------------------------------
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Text;
 
 namespace AddressBookSystem_LINQ
 {
-    class Program
+    public class AddressBookDataTable
     {
-        static void Main(string[] args)
-        {
-
-            Console.WriteLine("Welcome to the Address Book Data LINQ Operartion Program");
-        }
+        /// <summary>
+        /// UC1 Created new address book table
+        /// </summary>
+        public static DataTable addressBookTable = new DataTable();
     }
 }
