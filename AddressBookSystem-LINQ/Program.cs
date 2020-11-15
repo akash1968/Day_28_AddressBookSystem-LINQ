@@ -24,6 +24,8 @@ namespace AddressBookSystem_LINQ
             AddressBookDataTable.DisplayTableContents();
             //UC 6
             AddressBookDataTable.RetrievePersonFromACityOrState("Lakers", "Boston");
+            //UC 7
+            AddressBookDataTable.GetCountOfContactInCityOrState();
         }
     }
 }
