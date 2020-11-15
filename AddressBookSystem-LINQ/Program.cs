@@ -15,7 +15,7 @@ namespace AddressBookSystem_LINQ
             Console.WriteLine("Welcome to the Address Book Data LINQ Operartion Program");
             //UC 1,2,3
             AddressBookDataTable.AddDataIntoTable();
-            AddressBookDataTable.DisplayTableContents();
+            //AddressBookDataTable.DisplayTableContents();
             //UC 4
             AddressBookDataTable.EditExistingContact("Lebron", "James", 136119);
             AddressBookDataTable.DisplayTableContents();
@@ -26,6 +26,8 @@ namespace AddressBookSystem_LINQ
             AddressBookDataTable.RetrievePersonFromACityOrState("Lakers", "Boston");
             //UC 7
             AddressBookDataTable.GetCountOfContactInCityOrState();
+            //UC 8
+            AddressBookDataTable.RetrieveRecordsSortedByNameForAGivenCity("Celtics");
         }
     }
 }
