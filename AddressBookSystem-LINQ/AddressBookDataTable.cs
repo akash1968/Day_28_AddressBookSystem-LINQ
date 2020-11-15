@@ -84,5 +84,20 @@ namespace AddressBookSystem_LINQ
             //Delete the row
             x.Delete();
         }
+        /// <summary>
+        /// UC 6 : Retrieves the person from a city or state.
+        /// </summary>
+        /// <param name="city">The city.</param>
+        /// <param name="state">The state.</param>
+        public static void RetrievePersonFromACityOrState(string city, string state)
+        {
+            var retrievedData = (from p in addressBookTable.AsEnumerable()
+                                 where p.Field<string>("City") == city || p.Field<string>("State") == state
+                                 select p);
+            foreach (var v in retrievedData)
+            {
+                Console.WriteLine($"FirstName:{v.Field<string>("FirstName")}\nLastName:{v.Field<string>("LastName")}\nAddress:{v.Field<string>("Address")}\nCity:{v.Field<string>("City")}\nState:{v.Field<string>("State")}\nZip:{v.Field<int>("Zip")}\nPhoneNumber:{v.Field<double>("PhoneNumber")}\nEmail:{v.Field<string>("Email")}\n");
+            }
+        }
     }
 }
