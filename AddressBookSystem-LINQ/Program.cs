@@ -19,6 +19,9 @@ namespace AddressBookSystem_LINQ
             //UC 4
             AddressBookDataTable.EditExistingContact("Lebron", "James", 136119);
             AddressBookDataTable.DisplayTableContents();
+            // UC_5
+            AddressBookDataTable.DeleteContact("Lebron", "James");
+            AddressBookDataTable.DisplayTableContents();
         }
     }
 }
