@@ -13,8 +13,12 @@ namespace AddressBookSystem_LINQ
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Address Book Data LINQ Operartion Program");
-            ///Creating the instance of the address book repository
+            //UC 1,2,3
             AddressBookDataTable.AddDataIntoTable();
+            AddressBookDataTable.DisplayTableContents();
+            //UC 4
+            AddressBookDataTable.EditExistingContact("Lebron", "James", 136119);
+            AddressBookDataTable.DisplayTableContents();
         }
     }
 }

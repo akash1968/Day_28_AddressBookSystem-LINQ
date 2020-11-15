@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace AddressBookSystem_LINQ
@@ -45,6 +46,29 @@ namespace AddressBookSystem_LINQ
             addressBookTable.Rows.Add("Steph", "Curry", "Block 4", "Warriors", "Golden State", 987654, 3456787654, "sg@gmail.com");
             addressBookTable.Rows.Add("James", "Harden", "Street 5", "Rockets", "Houston", 234566, 6543456789, "vs@gmail.com");
             addressBookTable.Rows.Add("Michel", "Jordan", "Block 2", "Hornets ", "Charlotte ", 444556, 3456787654, "mj@gmail.com");
+        }
+        /// <summary>
+        /// Displays the table contents.
+        /// </summary>
+        public static void DisplayTableContents()
+        {
+            foreach (var v in addressBookTable.AsEnumerable())
+            {
+                Console.WriteLine($"FirstName:{v.Field<string>("FirstName")}\nLastName:{v.Field<string>("LastName")}\nAddress:{v.Field<string>("Address")}\nCity:{v.Field<string>("City")}\nState:{v.Field<string>("State")}\nZip:{v.Field<int>("Zip")}\nPhoneNumber:{v.Field<double>("PhoneNumber")}\nEmail:{v.Field<string>("Email")}\n");
+            }
+        }
+
+        /// <summary>
+        /// UC 4 : Edits the existing contact.
+        /// </summary>
+        /// <param name="firstName">The first name.</param>
+        /// <param name="lastName">The last name.</param>
+        /// <param name="zip">The zip.</param>
+        public static void EditExistingContact(string firstName, string lastName, int zip)
+        {
+            (from p in addressBookTable.AsEnumerable()
+             where p.Field<string>("FirstName") == firstName && p.Field<string>("LastName") == lastName
+             select p).ToList().ForEach(x => x[5] = zip);
         }
     }
 }
