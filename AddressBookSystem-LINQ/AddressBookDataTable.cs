@@ -38,6 +38,13 @@ namespace AddressBookSystem_LINQ
             primaryKeys[0] = addressBookTable.Columns["FirstName"];
             primaryKeys[1] = addressBookTable.Columns["LastName"];
             addressBookTable.PrimaryKey = primaryKeys;
+           
+            //Creating rows and adding data into rows
+            addressBookTable.Rows.Add("Lebron", "James", "Street 1", "Lakers", "Los Angeles", 444556, 6785674567, "lb@gmail.com");
+            addressBookTable.Rows.Add("Kyrie", "Irving", "Street 3", "Celtics", "Boston", 345267, 2345678987, "ki@gmail.com");
+            addressBookTable.Rows.Add("Steph", "Curry", "Block 4", "Warriors", "Golden State", 987654, 3456787654, "sg@gmail.com");
+            addressBookTable.Rows.Add("James", "Harden", "Street 5", "Rockets", "Houston", 234566, 6543456789, "vs@gmail.com");
+            addressBookTable.Rows.Add("Michel", "Jordan", "Block 2", "Hornets ", "Charlotte ", 444556, 3456787654, "mj@gmail.com");
         }
     }
 }
