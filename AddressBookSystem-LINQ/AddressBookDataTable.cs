@@ -70,5 +70,19 @@ namespace AddressBookSystem_LINQ
              where p.Field<string>("FirstName") == firstName && p.Field<string>("LastName") == lastName
              select p).ToList().ForEach(x => x[5] = zip);
         }
+        /// <summary>
+        /// UC 5 : Deletes the contact.
+        /// </summary>
+        /// <param name="firstName">The first name.</param>
+        /// <param name="lastName">The last name.</param>
+        public static void DeleteContact(string firstName, string lastName)
+        {
+            //Retrieve the datarow containing given name
+            var x = (from p in addressBookTable.AsEnumerable()
+                     where p.Field<string>("FirstName") == firstName && p.Field<string>("LastName") == lastName
+                     select p).FirstOrDefault();
+            //Delete the row
+            x.Delete();
+        }
     }
 }
